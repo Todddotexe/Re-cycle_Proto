@@ -8,6 +8,9 @@ public class PlayerMovement : MonoBehaviour
     public Camera playerView;
     public CharacterController controller;
     public Transform groundCheck;
+    public GameObject playerBody;
+    public GameObject posLocation;
+    public GameObject negLocation;
     #endregion
 
     #region Player Settings
@@ -47,10 +50,29 @@ public class PlayerMovement : MonoBehaviour
 
         if (Input.GetButtonDown("Jump") && isGrounded)
         {
-                velocity.y = Mathf.Sqrt(jumpHeight * -2f * gravity);
+            velocity.y = Mathf.Sqrt(jumpHeight * -2f * gravity);
         }
 
         velocity.y += gravity * Time.deltaTime;
         controller.Move(velocity * Time.deltaTime);
+
+        if (Input.GetKeyDown(KeyCode.Q))
+        {
+ //           if (negLocation == false)
+//            {
+                playerBody.transform.position = posLocation.transform.position;
+                posLocation.SetActive(false);
+                negLocation.SetActive(true);
+//            }
+        }
+//        if (posLocation == false)
+//        {
+//            if (Input.GetKeyDown(KeyCode.Q))
+//            {
+//                playerBody.transform.position = negLocation.transform.position;
+//                negLocation.SetActive(false);
+//                posLocation.SetActive(true);
+//            }
+//        }
     }
 }
