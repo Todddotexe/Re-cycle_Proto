@@ -441,6 +441,23 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 8933294333345720522, guid: 426b1c2a5bfc6f540aa33bf95325c50a, type: 3}
   m_PrefabInstance: {fileID: 1257992864}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &217661023
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 217661022}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ce8d9496d1d538645a21e316e7a2b107, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerBody: {fileID: 217661022}
+  posLocation: {fileID: 686724999}
+  negLocation: {fileID: 266311460}
+  posCanTeleport: 1
+  negCanTeleport: 0
 --- !u!4 &217661025 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8933294333345720521, guid: 426b1c2a5bfc6f540aa33bf95325c50a, type: 3}
@@ -461,7 +478,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &266311461
 Transform:
   m_ObjectHideFlags: 0

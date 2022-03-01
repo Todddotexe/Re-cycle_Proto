@@ -9,8 +9,6 @@ public class PlayerMovement : MonoBehaviour
     public CharacterController controller;
     public Transform groundCheck;
     public GameObject playerBody;
-    public GameObject posLocation;
-    public GameObject negLocation;
     #endregion
 
     #region Player Settings
@@ -55,24 +53,5 @@ public class PlayerMovement : MonoBehaviour
 
         velocity.y += gravity * Time.deltaTime;
         controller.Move(velocity * Time.deltaTime);
-
-        if (Input.GetKeyDown(KeyCode.Q))
-        {
- //           if (negLocation == false)
-//            {
-                playerBody.transform.position = posLocation.transform.position;
-                posLocation.SetActive(false);
-                negLocation.SetActive(true);
-//            }
-        }
-//        if (posLocation == false)
-//        {
-//            if (Input.GetKeyDown(KeyCode.Q))
-//            {
-//                playerBody.transform.position = negLocation.transform.position;
-//                negLocation.SetActive(false);
-//                posLocation.SetActive(true);
-//            }
-//        }
     }
 }
