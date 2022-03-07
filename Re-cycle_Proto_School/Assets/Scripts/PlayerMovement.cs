@@ -9,6 +9,7 @@ public class PlayerMovement : MonoBehaviour
     public CharacterController controller;
     public Transform groundCheck;
     public GameObject playerBody;
+
     #endregion
 
     #region Player Settings

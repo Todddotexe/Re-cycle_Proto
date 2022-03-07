@@ -5,35 +5,35 @@ using UnityEngine;
 public class Teleport : MonoBehaviour
 {
     public GameObject playerBody;
-    public GameObject posLocation;
-    public GameObject negLocation;
+    public CharacterController characterController;
 
-    public bool posCanTeleport = true;
-    public bool negCanTeleport = false;
+    public Transform posPosition;
+    public Transform negPosition;
 
-    void Start()
-    {
-        
-    }
+    public bool planeSwap = true;
 
-    // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Q))
+        if (planeSwap == true)
         {
-//            if (posCanTeleport == true)
-//            {
-                playerBody.transform.position = posLocation.transform.position;
-                posCanTeleport = false;
-                negCanTeleport = true;
-//            }
-//            if (negCanTeleport == true)
-//            {
-//                playerBody.transform.position = negLocation.transform.position;
-//                negCanTeleport = false;
-//                posCanTeleport = true;
-//            }
-            
+            if (Input.GetKeyDown(KeyCode.Q))
+            {
+                characterController.enabled = false;
+                playerBody.transform.position = posPosition.transform.position;
+                planeSwap = false;
+                characterController.enabled = true;
+            }
+        }
+        else
+        {
+            if (Input.GetKeyDown(KeyCode.Q))
+            {
+                characterController.enabled = false;
+                playerBody.transform.position = negPosition.transform.position;
+                planeSwap = true;
+                characterController.enabled = true;
+            }
         }
     }
+
 }
